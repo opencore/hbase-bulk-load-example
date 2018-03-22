@@ -8,7 +8,7 @@ import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class BulkLoadMapper extends Mapper<NullWritable, NullWritable, ImmutableBytesWritable, Put> {
+public class BulkLoadMapperTemplate extends Mapper<NullWritable, NullWritable, ImmutableBytesWritable, Put> {
 
   private static final byte[] CF_BYTES = Bytes.toBytes("cf");
   private static final byte[] QUAL_BYTES = Bytes.toBytes("q");

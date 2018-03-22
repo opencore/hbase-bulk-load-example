@@ -26,10 +26,10 @@ import org.apache.hadoop.util.StringUtils;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-public class BulkLoadDriver extends Configured implements Tool {
+public class BulkLoadDriverTemplate extends Configured implements Tool {
 
   public static void main(String... args) throws Exception {
-    int status = ToolRunner.run(new BulkLoadDriver(), args);
+    int status = ToolRunner.run(new BulkLoadDriverTemplate(), args);
     System.exit(status);
   }
 
@@ -40,8 +40,8 @@ public class BulkLoadDriver extends Configured implements Tool {
 
     Job job = Job.getInstance(conf, "HBase Bulk Load Example");
 
-    job.setJarByClass(BulkLoadMapper.class);
-    job.setMapperClass(BulkLoadMapper.class);
+    job.setJarByClass(BulkLoadMapperTemplate.class);
+    job.setMapperClass(BulkLoadMapperTemplate.class);
     job.setMapOutputKeyClass(ImmutableBytesWritable.class);
     job.setMapOutputValueClass(Put.class);
 

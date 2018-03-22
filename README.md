@@ -6,4 +6,10 @@ It will _not_ work out of the box. One reason for this is that the business logi
 
 It is coded against the HBase 1.4.1 API.
 
-*Warning*: This is untested. Feedback welcome.
+*Note*: I have not tested the Secure Bulk Load 
+
+## Template vs. Example
+
+There are two sets of classes in here. One ending in `Template` will _not_ run out of the box. You'll need to customize it to your needs.
+
+The other - ending in `Example` - should run. It treats all input files as text files.
