@@ -41,8 +41,8 @@ public class BulkLoadDriverExample extends Configured implements Tool {
 
     Job job = Job.getInstance(conf, "HBase Bulk Load Example");
 
-    job.setJarByClass(BulkLoadMapperTemplate.class);
-    job.setMapperClass(BulkLoadMapperTemplate.class);
+    job.setJarByClass(BulkLoadMapperExample.class);
+    job.setMapperClass(BulkLoadMapperExample.class);
     job.setMapOutputKeyClass(ImmutableBytesWritable.class);
     job.setMapOutputValueClass(Put.class);
 
