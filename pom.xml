@@ -14,8 +14,8 @@
 
     <maven-shade-plugin.version>3.1.0</maven-shade-plugin.version>
 
-    <hbase.version>1.4.1</hbase.version>
-    <hadoop.version>2.7.5</hadoop.version>
+    <hbase.version>1.2.0</hbase.version>
+    <hadoop.version>2.6.0</hadoop.version>
   </properties>
 
   <dependencies>

@@ -17,7 +17,7 @@ import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.RegionLocator;
 import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
-import org.apache.hadoop.hbase.mapreduce.HFileOutputFormat2;
+import org.apache.hadoop.hbase.mapreduce.PatchedHFileOutputFormat2;
 import org.apache.hadoop.hbase.mapreduce.LoadIncrementalHFiles;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -55,7 +55,7 @@ public class BulkLoadDriverExample extends Configured implements Tool {
       TableName tableName = TableName.valueOf(tableNameString);
       Table table = connection.getTable(tableName);
       RegionLocator regionLocator = connection.getRegionLocator(tableName);
-      HFileOutputFormat2.configureIncrementalLoad(job, table, regionLocator);
+      PatchedHFileOutputFormat2.configureIncrementalLoad(job, table, regionLocator);
     }
     return job;
   }
