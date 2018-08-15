@@ -23,9 +23,15 @@ public class BulkLoadMapperExample extends Mapper<LongWritable, Text, ImmutableB
 
   @Override
   protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+    if (value.getLength() == 0) {
+      return;
+    }
+
     byte[] rowKey = Bytes.toBytes(key.get());
+
     Put put = new Put(rowKey);
-    put.addColumn(CF_BYTES, QUAL_BYTES, value.getBytes());
+    put.addColumn(CF_BYTES, QUAL_BYTES, value.copyBytes());
+
     context.write(new ImmutableBytesWritable(rowKey), put);
   }
 
